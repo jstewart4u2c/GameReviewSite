@@ -1,0 +1,24 @@
+{% extends 'Reviews/base.html' %}
+
+
+
+{% block body %}
+
+    {% for review in review %}
+        <div class="row">
+            <div class="col-md-1 offset-md-3">
+                <img class="card" style="height: 180px" src="{{ review.image.url }}"/>
+            </div>
+            <div class="col-md-4">
+                <h2>{{ review.game_name }}</h2>
+                <p>Rating: {{ review.rating }}</p>
+                <p>{{ review.short }}</p>
+            </div>
+            <div class="col-md-2 d-flex align-items-center">
+                <a href="{% url 'review_details' review.id %}" class="btn btn-success">Details</a>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+
+{% endblock %}

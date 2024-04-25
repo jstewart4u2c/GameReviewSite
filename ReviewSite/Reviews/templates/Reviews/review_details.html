@@ -1,0 +1,8 @@
+{% extends 'Reviews/base.html' %}
+{% load embed_video_tags %}
+
+
+{% block body %}
+    {{ review.game_name }}
+    {% video review.url '426x240' %}
+{% endblock %}

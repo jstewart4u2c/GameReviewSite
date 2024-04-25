@@ -1,0 +1,9 @@
+{% extends 'Reviews/base.html' %}
+{% block body %}
+<h1>Contact Me</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

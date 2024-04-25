@@ -1,0 +1,16 @@
+.text-white:hover {
+    color: rgb(111, 232, 145);
+}
+
+body {
+    font-family: Garamond, serif;
+    background-color: #F8F8FF;
+}
+
+p {
+    font-size: 20px;
+}
+
+hr {
+    width: 50%;
+}
