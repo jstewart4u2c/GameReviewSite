@@ -10,6 +10,7 @@ class Review(models.Model):
     image = models.ImageField(default='images/none/default.jpg', upload_to='game_images')
     short = models.CharField(max_length=200, default='A Juicy Game Review')
     url = EmbedVideoField(default='https://youtu.be/GhLMEFOBXqo?si=RemdII9VdRmQZ5UL')
+    steam_url = models.URLField(default='https://steamcommunity.com')
 
     def __str__(self):
         return self.game_name

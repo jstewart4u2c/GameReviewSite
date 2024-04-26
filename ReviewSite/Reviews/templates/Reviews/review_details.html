@@ -8,6 +8,11 @@
             <div class="col">
                 <h2>{{ review.game_name }}</h2>
             </div>
+            <h2>|</h2>
+            <div class="col">
+                <h2>Genre: {{ review.genre }}</h2>
+            </div>
+            <h2>|</h2>
             <div class="col">
                 <h2>Rating: {{ review.rating }}/10</h2>
             </div>
@@ -18,7 +23,11 @@
                 {% video review.url '853x505' %}
             </div>
         </div>
-    
+        <div class="row" style="margin-top: 20px">
+            <div class="col">
+                <h4>Purchase the game here: <a href="{{ review.steam_url }}" target="_blank">{{ review.steam_url }}</a></h4>
+            </div>
+        </div>
     </div>
 
 

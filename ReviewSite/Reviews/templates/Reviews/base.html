@@ -12,8 +12,17 @@
 </head>
 <body>
 
-<nav class="navbar navbar-dark" style="background-color: rgb(6, 12, 35)">
+<!-- Nav Bar -->
+<nav class="navbar navbar-dark" style="background-color: rgb(6, 12, 35); margin-bottom: 10px">
     <a href="{% url 'review_list' %}" class="navbar-brand text-white">Juicy Reviews</a>
+    <!-- Search Bar in Nav Bar -->
+    <div class="offset-md-1">
+        <form action="" method="GET" class="offset-md-">
+            <input type="search" name="game" placeholder="insert cool game title here">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <!-- Buttons -->
     <div class="navbar">
         <a href="{% url 'contact' %}" class="nav-item nav-link text-white">Contact</a>
         {% if user.is_authenticated %}

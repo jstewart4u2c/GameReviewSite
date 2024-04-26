@@ -9,9 +9,9 @@ from django.core.paginator import Paginator
 def review_list(request):
     review = Review.objects.all()
 
-    game_name = request.GET.get('game_name')
-    if game_name != '' and game_name is not None:
-        review = review.filter(name__icontains=game_name)
+    game = request.GET.get('game')
+    if game != '' and game is not None:
+        review = review.filter(game_name__icontains=game)
 
     p = Paginator(review, 4)
     page = request.GET.get('page')
