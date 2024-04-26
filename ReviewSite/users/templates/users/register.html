@@ -1,8 +1,32 @@
 {% extends 'Reviews/base.html' %}
+
 {% block body %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Sign Up</button>
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card">
+                    <div class="card-header text-white" style="background-color: #2a324b">
+                        <div id="card-title">
+                            Register
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group">
+                                    {{ field.name }}
+                                    <br>
+                                    {{ field }}
+                                </div>
+                            {% endfor %}
+                            <button type="submit" class="btn-success">Sign Up</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

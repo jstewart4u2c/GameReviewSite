@@ -1,8 +1,40 @@
 {% extends 'Reviews/base.html' %}
+
 {% block body %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Login</button>
-    </form>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card">
+                    <div class="card-header text-white" style="background-color: #2a324b">
+                        <div id="card-title">
+                            Login
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group">
+                                    {{ field.name }}
+                                    {{ field }}
+                                </div>
+                            {% endfor %}
+                            <button type="submit" class="btn-success">Login</button>
+                        </form>
+                    </div>
+                </div>
+                <p>No Account? <a href="{% url 'register' %}">Register here</a></p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -3,6 +3,24 @@
 
 
 {% block body %}
-    {{ review.game_name }}
-    {% video review.url '426x240' %}
+    <div class="container text-center">
+        <div class="row align-center"  style="margin-top: 10px">
+            <div class="col">
+                <h2>{{ review.game_name }}</h2>
+            </div>
+            <div class="col">
+                <h2>Rating: {{ review.rating }}/10</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                {% video review.url '853x505' %}
+            </div>
+        </div>
+    
+    </div>
+
+
+
 {% endblock %}
